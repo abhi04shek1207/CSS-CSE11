@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 3vw;
+    z-index: 1000;
+}
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.menu-toggle {
+    display: none;
+}
+.hamburger {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.nav-actions a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-actions a:hover {
+    text-decoration: underline;
+}
+.hero {
+    margin-top: 60px; 
+    padding: 2rem 3vw;
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    how hamburger on mobile */
+    .hamburger {
+        display: block;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .nav-actions {
+        font-size: 0.8rem;
+    }
+    .nav-links {
+        position: absolute;
+        top: 48px;            
+        left: 0;
+        width: 100%;
+        background: #333;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        overflow: hidden;
+        max-height: 0;         
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 0;
+        border-top: 1px solid #444;
+    }
+
+    
+    .menu-toggle:checked ~ .nav-links {
+        max-height: 400px;    
+    }
+}
+   
